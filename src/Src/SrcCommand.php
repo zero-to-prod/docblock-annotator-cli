@@ -15,6 +15,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class SrcCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     */
     public const signature = 'docblock-annotator-cli:src';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
