@@ -25,13 +25,6 @@ class UpdateCommand extends Command
         $Args = UpdateArguments::from($input->getArguments());
         $Options = UpdateOptions::from($input->getOptions());
 
-        var_dump([
-            $Args,
-            $Options
-        ]);
-
-        die();
-
         DocblockAnnotator::update(
             $Args->directory,
             $Args->comments,
