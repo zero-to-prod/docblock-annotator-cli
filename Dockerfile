@@ -16,7 +16,7 @@ RUN composer update --no-dev --prefer-dist --optimize-autoloader --no-interactio
 
 COPY . /app
 
-RUN chmod +x /app/bin/:slug
+RUN chmod +x /app/bin/docblock-annotator-cli
 
 FROM php:8.2-alpine
 
@@ -24,4 +24,4 @@ WORKDIR /app
 
 COPY --from=builder /app /app
 
-ENTRYPOINT ["php", "bin/:slug", "--ansi"]
+ENTRYPOINT ["php", "bin/docblock-annotator-cli", "--ansi"]
