@@ -53,7 +53,7 @@ class UpdateCommand extends Command
         $this->addArgument(UpdateArguments::directory, InputArgument::REQUIRED, 'The directory to update php files.');
         $this->addArgument(UpdateArguments::comments, InputArgument::IS_ARRAY, "The comments to add to the docblock. (e.g. 'app:foo bar baz' = ['bar', 'baz'])");
         $this->addOption(UpdateOptions::visibility, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The visibility of the member: public, private, protected. (e.g. --visibility=public --visibility=private --visibility=protected)', [Annotator::public]);
-        $this->addOption(UpdateOptions::members, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The kinds of elements to annotate: method, property, constant. (e.g. --members=method --members=property --members=constant)', [Annotator::method, Annotator::property, Annotator::constant]);
+        $this->addOption(UpdateOptions::members, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The kinds of elements to annotate: method, property, constant, class. (e.g. --members=method --members=property --members=constant --members=class)', [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_]);
         $this->addOption(UpdateOptions::recursive, null, InputOption::VALUE_NEGATABLE, 'Recursively searches for files. (e.g. --recursive --no-recursive) ');
     }
 }
