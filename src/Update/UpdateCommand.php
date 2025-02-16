@@ -18,6 +18,9 @@ use Zerotoprod\DocblockAnnotator\DocblockAnnotator;
 )]
 class UpdateCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     */
     public const signature = 'docblock-annotator-cli:update';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -42,6 +45,9 @@ class UpdateCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     */
     public function configure(): void
     {
         $this->addArgument(UpdateArguments::directory, InputArgument::REQUIRED, 'The directory to update php files.');
