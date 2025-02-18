@@ -5,6 +5,9 @@ namespace Zerotoprod\DocblockAnnotatorCli\Update;
 use Zerotoprod\DataModel\DataModel;
 use Zerotoprod\DocblockAnnotator\Annotator;
 
+/**
+ * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ */
 class UpdateOptions
 {
     use DataModel;
