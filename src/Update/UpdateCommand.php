@@ -12,6 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\DocblockAnnotator\Annotator;
 use Zerotoprod\DocblockAnnotator\DocblockAnnotator;
 
+/**
+ * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ */
 #[AsCommand(
     name: UpdateCommand::signature,
     description: 'Adds lines to a php docblock.'
