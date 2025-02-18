@@ -1,13 +1,13 @@
 <?php
 
-namespace Zerotoprod\DocblockAnnotatorCli\Update;
+namespace Zerotoprod\DocblockAnnotatorCli\UpdateDirectory;
 
 use Zerotoprod\DataModel\DataModel;
 
 /**
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
  */
-class UpdateArguments
+class UpdateDirectoryArguments
 {
     use DataModel;
 
