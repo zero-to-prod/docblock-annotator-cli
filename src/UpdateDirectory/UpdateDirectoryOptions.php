@@ -3,7 +3,6 @@
 namespace Zerotoprod\DocblockAnnotatorCli\UpdateDirectory;
 
 use Zerotoprod\DataModel\DataModel;
-use Zerotoprod\DocblockAnnotator\Annotator;
 
 /**
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
@@ -19,7 +18,7 @@ class UpdateDirectoryOptions
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public array $visibility = [Annotator::public];
+    public array $visibility = [];
 
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
@@ -28,7 +27,7 @@ class UpdateDirectoryOptions
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public array $members = [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_];
+    public array $members = [];
 
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
