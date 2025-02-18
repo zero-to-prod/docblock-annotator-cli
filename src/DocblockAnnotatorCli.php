@@ -6,6 +6,9 @@ use Symfony\Component\Console\Application;
 use Zerotoprod\DocblockAnnotatorCli\Src\SrcCommand;
 use Zerotoprod\DocblockAnnotatorCli\Update\UpdateCommand;
 
+/**
+ * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ */
 class DocblockAnnotatorCli
 {
     /**
