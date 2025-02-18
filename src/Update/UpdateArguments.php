@@ -4,6 +4,9 @@ namespace Zerotoprod\DocblockAnnotatorCli\Update;
 
 use Zerotoprod\DataModel\DataModel;
 
+/**
+ * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ */
 class UpdateArguments
 {
     use DataModel;
