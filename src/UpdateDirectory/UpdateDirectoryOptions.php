@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\DocblockAnnotatorCli\Update;
+namespace Zerotoprod\DocblockAnnotatorCli\UpdateDirectory;
 
 use Zerotoprod\DataModel\DataModel;
 use Zerotoprod\DocblockAnnotator\Annotator;
@@ -8,7 +8,7 @@ use Zerotoprod\DocblockAnnotator\Annotator;
 /**
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
  */
-class UpdateOptions
+class UpdateDirectoryOptions
 {
     use DataModel;
 
