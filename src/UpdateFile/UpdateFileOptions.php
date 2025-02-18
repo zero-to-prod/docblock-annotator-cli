@@ -28,7 +28,7 @@ class UpdateFileOptions
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public array $members = [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_];
+    public array $members = [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_, Annotator::trait_];
 
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
