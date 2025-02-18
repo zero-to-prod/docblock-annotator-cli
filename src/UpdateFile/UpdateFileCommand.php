@@ -55,6 +55,6 @@ class UpdateFileCommand extends Command
         $this->addArgument(UpdateFileArguments::file, InputArgument::REQUIRED, 'The php file to update.');
         $this->addArgument(UpdateFileArguments::comments, InputArgument::IS_ARRAY, "The comments to add to the docblock. (e.g. 'app:foo bar baz' = ['bar', 'baz'])");
         $this->addOption(UpdateFileOptions::visibility, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The visibility of the member: public, private, protected. (e.g. --visibility=public --visibility=private --visibility=protected)', [Annotator::public]);
-        $this->addOption(UpdateFileOptions::members, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The kinds of elements to annotate: method, property, constant, class. (e.g. --members=method --members=property --members=constant --members=class --members=enum --members=enum_case --members=interface)', [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_, Annotator::enum, Annotator::enum_case, Annotator::interface_]);
+        $this->addOption(UpdateFileOptions::members, null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The kinds of elements to annotate: method, property, constant, class. (e.g. --members=method --members=property --members=constant --members=class --members=enum --members=enum_case --members=interface --members=trait)', [Annotator::method, Annotator::property, Annotator::constant, Annotator::class_, Annotator::enum, Annotator::enum_case, Annotator::interface_, Annotator::trait_]);
     }
 }
