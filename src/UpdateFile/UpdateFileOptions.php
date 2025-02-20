@@ -3,8 +3,11 @@
 namespace Zerotoprod\DocblockAnnotatorCli\UpdateFile;
 
 use Zerotoprod\DataModel\DataModel;
+use Zerotoprod\DocblockAnnotator\Modifier;
+use Zerotoprod\DocblockAnnotator\Statement;
 
 /**
+ * @internal
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
  */
 class UpdateFileOptions
@@ -12,28 +15,36 @@ class UpdateFileOptions
     use DataModel;
 
     /**
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public const visibility = 'visibility';
+    public const modifiers = 'modifiers';
     /**
+     * @var Modifier[]
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public array $visibility = [];
+    public array $modifiers = [];
 
     /**
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public const members = 'members';
+    public const statements = 'statements';
     /**
+     * @var Statement[]
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
-    public array $members = [];
+    public array $statements = [];
 
     /**
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
     public const recursive = 'recursive';
     /**
+     * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
      */
     public bool $recursive = true;
