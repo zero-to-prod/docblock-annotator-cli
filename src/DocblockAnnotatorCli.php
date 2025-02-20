@@ -8,6 +8,8 @@ use Zerotoprod\DocblockAnnotatorCli\UpdateDirectory\UpdateDirectoryCommand;
 use Zerotoprod\DocblockAnnotatorCli\UpdateFile\UpdateFileCommand;
 
 /**
+ * A cli for annotating Docblocks.
+ *
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
  */
 class DocblockAnnotatorCli
