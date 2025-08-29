@@ -14,6 +14,8 @@ jobs:
       contents: write
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
 
       - name: Update docblocks
         run: |
