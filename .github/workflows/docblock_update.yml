@@ -9,10 +9,14 @@ on:
 jobs:
   update-docblocks:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract source URL from composer.json
         id: get-source-url
