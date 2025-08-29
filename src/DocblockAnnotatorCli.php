@@ -11,9 +11,13 @@ use Zerotoprod\DocblockAnnotatorCli\UpdateFile\UpdateFileCommand;
  * A cli for annotating Docblocks.
  *
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
  */
 class DocblockAnnotatorCli
 {
+    /**
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
+     */
     public static function register(Application $Application): void
     {
         $Application->add(new SrcCommand());

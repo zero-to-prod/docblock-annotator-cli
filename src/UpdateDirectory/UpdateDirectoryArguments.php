@@ -7,6 +7,7 @@ use Zerotoprod\DataModel\DataModel;
 /**
  * @internal
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
  */
 class UpdateDirectoryArguments
 {
@@ -15,22 +16,26 @@ class UpdateDirectoryArguments
     /**
      * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public const directory = 'directory';
     /**
      * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public string $directory;
 
     /**
      * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public const comments = 'comments';
     /**
      * @internal
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public array $comments;
 }

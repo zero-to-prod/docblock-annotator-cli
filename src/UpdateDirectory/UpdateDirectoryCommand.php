@@ -15,6 +15,7 @@ use Zerotoprod\DocblockAnnotator\Statement;
 
 /**
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
  */
 #[AsCommand(
     name: UpdateDirectoryCommand::signature,
@@ -25,6 +26,7 @@ class UpdateDirectoryCommand extends Command
 {
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public const signature = 'docblock-annotator-cli:update-directory';
 
@@ -71,6 +73,7 @@ class UpdateDirectoryCommand extends Command
 
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public function configure(): void
     {

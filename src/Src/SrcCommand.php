@@ -9,6 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * @link https://github.com/zero-to-prod/docblock-annotator-cli
+ * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
  */
 #[AsCommand(
     name: SrcCommand::signature,
@@ -18,6 +19,7 @@ class SrcCommand extends Command
 {
     /**
      * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     * @link {https://github.com/zero-to-prod/docblock-annotator-cli}
      */
     public const signature = 'docblock-annotator-cli:src';
 
