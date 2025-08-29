@@ -2,9 +2,6 @@ name: docblock_update
 
 on:
   pull_request:
-    branches: [ "*" ]
-    branches-ignore:
-      - main
 
 jobs:
   update-docblocks:
