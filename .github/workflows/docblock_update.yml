@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref || github.ref }}
 
       - name: Extract source URL from composer.json
         id: get-source-url
@@ -36,8 +37,6 @@ jobs:
           
       - name: Push changes
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            git push origin HEAD:${{ github.head_ref }}
-          else
-            git push origin HEAD:${{ github.ref_name }}
-          fi
+          CURRENT_BRANCH=$(git branch --show-current)
+          echo "Current branch: $CURRENT_BRANCH"
+          git push origin $CURRENT_BRANCH
