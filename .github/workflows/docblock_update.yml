@@ -14,9 +14,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
       - name: Update docblocks
         run: |
