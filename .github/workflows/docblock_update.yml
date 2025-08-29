@@ -1,10 +1,9 @@
 name: docblock_update
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches-ignore:
+      - main
 
 jobs:
   update-docblocks:
@@ -19,24 +18,20 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.head_ref || github.ref }}
 
-      - name: Extract source URL from composer.json
-        id: get-source-url
+      - name: Update docblocks
         run: |
           SOURCE_URL=$(jq -r '.support.source' composer.json)
-          echo "source_url=$SOURCE_URL" >> $GITHUB_OUTPUT
+          docker run -v ./src:/app/run --rm davidsmith3/docblock-annotator-cli \
+            docblock-annotator-cli:update-directory /app/run "@link $SOURCE_URL"
 
-      - name: Run Docblock Annotator
-        run: docker run -v ./src:/app/run --rm davidsmith3/docblock-annotator-cli docblock-annotator-cli:update-directory /app/run "@link ${{ steps.get-source-url.outputs.source_url }}"
-
-      - name: Commit changes
+      - name: Commit and push changes (if any)
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff --staged --quiet || git commit -m "Update docblocks with @link annotations"
-          
-      - name: Push changes
-        run: |
-          CURRENT_BRANCH=$(git branch --show-current)
-          echo "Current branch: $CURRENT_BRANCH"
-          git push origin $CURRENT_BRANCH
+          if ! git diff --staged --quiet; then
+            git commit -m "Update docblocks with @link annotations"
+            git push
+          else
+            echo "No changes to commit."
+          fi
