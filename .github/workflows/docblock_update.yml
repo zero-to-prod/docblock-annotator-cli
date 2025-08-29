@@ -2,7 +2,7 @@ name: docblock_update
 
 on:
   pull_request:
-    branches: [ * ]
+    branches: [ "*" ]
     branches-ignore:
       - main
 
