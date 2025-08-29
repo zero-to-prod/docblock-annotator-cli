@@ -14,6 +14,9 @@ use Zerotoprod\DocblockAnnotatorCli\UpdateFile\UpdateFileCommand;
  */
 class DocblockAnnotatorCli
 {
+    /**
+     * @link https://github.com/zero-to-prod/docblock-annotator-cli
+     */
     public static function register(Application $Application): void
     {
         $Application->add(new SrcCommand());
