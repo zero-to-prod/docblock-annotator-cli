@@ -45,7 +45,8 @@
     }
   },
   "bin": [
-    "bin/docblock-annotator-cli"
+    "bin/docblock-annotator-cli",
+    "bin/zero-to-prod-docblock-annotator-cli"
   ],
   "require-dev": {
     "phpunit/phpunit": "<12.0"
