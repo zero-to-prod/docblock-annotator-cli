@@ -18,7 +18,13 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Documentation Publishing](#documentation-publishing)
+    - [Automatic Documentation Publishing](#automatic-documentation-publishing)
 - [Usage](#usage)
+    - [Available Commands](#available-commands)
+        - [`docblock-annotator-cli:src`](#docblock-annotator-clisrc)
+        - [`docblock-annotator-cli:update-file`](#docblock-annotator-clipdate-file)
+        - [`docblock-annotator-cli:update-directory`](#docblock-annotator-clipdate-directory)
 - [Docker Image](#docker-image)
 - [Local Development](./LOCAL_DEVELOPMENT.md)
 - [Image Development](./IMAGE_DEVELOPMENT.md)
@@ -40,7 +46,40 @@ Install `Zerotoprod\DocblockAnnotatorCli` via [Composer](https://getcomposer.org
 composer require zero-to-prod/docblock-annotator-cli
 ```
 
-This will add the package to your project’s dependencies and create an autoloader entry for it.
+This will add the package to your project's dependencies and create an autoloader entry for it.
+
+## Documentation Publishing
+
+You can publish this README to your local documentation directory.
+
+This can be useful for providing documentation for AI agents.
+
+This can be done using the included script:
+
+```bash
+# Publish to default location (./docs/zero-to-prod/docblock-annotator-cli)
+vendor/bin/zero-to-prod-docblock-annotator-cli
+
+# Publish to custom directory
+vendor/bin/zero-to-prod-docblock-annotator-cli /path/to/your/docs
+```
+
+### Automatic Documentation Publishing
+
+You can automatically publish documentation by adding the following to your `composer.json`:
+
+```json
+{
+    "scripts": {
+        "post-install-cmd": [
+            "zero-to-prod-docblock-annotator-cli"
+        ],
+        "post-update-cmd": [
+            "zero-to-prod-docblock-annotator-cli"
+        ]
+    }
+}
+```
 
 ## Usage
 
@@ -48,6 +87,87 @@ Run this command to see the available commands:
 
 ```shell
 vendor/bin/docblock-annotator-cli list
+```
+
+### Available Commands
+
+#### `docblock-annotator-cli:src`
+
+Displays the project's GitHub repository URL.
+
+**Usage:**
+```shell
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:src
+```
+
+**Example:**
+```shell
+$ vendor/bin/docblock-annotator-cli docblock-annotator-cli:src
+https://github.com/zero-to-prod/docblock-annotator-cli
+```
+
+#### `docblock-annotator-cli:update-file`
+
+Adds lines to a PHP docblock in a specific file.
+
+**Usage:**
+```shell
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-file [options] <file> [<comments>...]
+```
+
+**Arguments:**
+- `file` (required) - The PHP file to update
+- `comments` (optional) - The comments to add to the docblock
+
+**Options:**
+- `--modifiers` - The modifier of the member: public, private, protected (default: public)
+- `--statements` - The statements to annotate: class_method, const, class, class_const, enum_case, enum, function, trait, property, interface (default: all)
+
+**Examples:**
+```shell
+# Add comments to all public methods in a file
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-file src/MyClass.php "Added by CLI" "Updated on $(date)"
+
+# Update only private methods with custom comments
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-file --modifiers=private src/MyClass.php "Private method updated"
+
+# Update only class methods and properties
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-file --statements=class_method --statements=property src/MyClass.php "Method and property updated"
+```
+
+#### `docblock-annotator-cli:update-directory`
+
+Adds lines to PHP docblocks in all files within a directory.
+
+**Usage:**
+```shell
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-directory [options] <directory> [<comments>...]
+```
+
+**Alias:** `docblock-annotator-cli:update`
+
+**Arguments:**
+- `directory` (required) - The directory to update PHP files in
+- `comments` (optional) - The comments to add to the docblock
+
+**Options:**
+- `--modifiers` - The modifier of the member: public, private, protected (default: public)
+- `--statements` - The statements to annotate: class_method, const, class, class_const, enum_case, enum, function, trait, property, interface (default: all)
+- `--recursive` / `--no-recursive` - Recursively search for files (default: recursive)
+
+**Examples:**
+```shell
+# Update all PHP files in src directory with comments
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-directory src/ "Bulk updated" "$(date)"
+
+# Update only public methods in src directory (non-recursive)
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-directory --no-recursive --statements=class_method src/ "Public methods updated"
+
+# Use the shorter alias command
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update src/ "Updated via alias"
+
+# Update all statement types with specific modifiers
+vendor/bin/docblock-annotator-cli docblock-annotator-cli:update-directory --modifiers=public --modifiers=protected src/ "Updated public and protected members"
 ```
 
 ## Docker Image
